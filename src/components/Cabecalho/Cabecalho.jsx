@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import CampoTexto from '../CampoTexto/CampoTexto'
 
 const HeaderStyle = styled.header`
-  padding: 60px, 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
   display: flex;
   justify-content: space-between;
   img {
@@ -15,7 +16,7 @@ const Cabecalho = () => {
   return (
     <HeaderStyle>
       <img src="imagens/logo.png" alt="Logo Space App" />
-      <CampoTexto placeHolder='O que você procura?'/>
+      <CampoTexto placeholder='O que você procura?'/>
     </HeaderStyle>
   )
 }
