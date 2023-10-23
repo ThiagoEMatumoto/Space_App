@@ -5,7 +5,7 @@ import BarraLateral from "./components/BarraLateral/BarraLateral";
 import Banner from "./components/Banner/Banner";
 import bannerBackground from "./assets/banner.png";
 import Galeria from "./components/Galeria/Galeria";
-import foto from './fotos.json'
+import fotos from './fotos.json'
 import { useState } from "react";
 
 
