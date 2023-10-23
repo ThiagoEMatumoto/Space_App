@@ -3,7 +3,11 @@ import EstilosGlobais from "./components/EstilosGlobais/EstilosGlobais";
 import Cabecalho from "./components/Cabecalho/Cabecalho";
 import BarraLateral from "./components/BarraLateral/BarraLateral";
 import Banner from "./components/Banner/Banner";
-import bannerBackground from './assets/banner.png'
+import bannerBackground from "./assets/banner.png";
+import Galeria from "./components/Galeria/Galeria";
+import foto from './fotos.json'
+import { useState } from "react";
+
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -18,13 +22,41 @@ const FundoGradiente = styled.div`
   min-width: 100vh;
 `;
 
+const AppContainer = styled.div`
+  width: 1440px;
+  margin: 0 auto;
+  max-width: 100%;
+`;
+
+const MainContainer = styled.main`
+  display: flex;
+  gap: 24px;
+`;
+
+const ConteudoGaleria = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
+
 function App() {
+  const [fotosGaleria, setFotosGaleria] = useState(fotos)
   return (
     <FundoGradiente>
       <EstilosGlobais />
-      <Cabecalho/>
-      <BarraLateral/>
-      <Banner titulo='A galeria mais completa de fotos do espaço!' backgroundImage={bannerBackground} />
+      <AppContainer>
+        <Cabecalho />
+        <MainContainer>
+          <BarraLateral />
+          <ConteudoGaleria>
+            <Banner
+              titulo="A galeria mais completa de fotos do espaço!"
+              backgroundImage={bannerBackground}
+            />
+            <Galeria fotos={fotosGaleria}/>
+          </ConteudoGaleria>
+        </MainContainer>
+      </AppContainer>
     </FundoGradiente>
   );
 }
